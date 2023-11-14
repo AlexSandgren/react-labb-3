@@ -2,6 +2,7 @@ import { createContext, useContext, Dispatch } from 'react'
 
 function PokeContextProvider() {
     interface PokeState {
+        baseUrl: 'https://pokeapi.co/api/v2/'
         poke1: string
         poke2: string
     }
