@@ -1,5 +1,9 @@
 function CompetetitivePokemon() {
-    return ( <></> );
+    return (
+        <>
+            <h1>Roles</h1>
+        </>
+    )
 }
 
-export default CompetetitivePokemon;
+export default CompetetitivePokemon

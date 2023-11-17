@@ -1,10 +1,13 @@
+import PokeContainer from '@/components/PokeContainer'
 import RootLayout from './layout'
-import PokeContextProvider from '@/components/PokeContextProvider'
+import { PokeProvider } from '@/components/PokeProvider'
 
 export default function Home() {
     return (
         <>
-            <PokeContextProvider></PokeContextProvider>
+            <PokeProvider>
+                <PokeContainer />
+            </PokeProvider>
         </>
     )
 }
