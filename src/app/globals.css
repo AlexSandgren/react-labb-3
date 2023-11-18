@@ -59,10 +59,23 @@ a {
 .poke-types-container {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .poke-image {
     height: 96px;
     width: 96px;
     margin: auto;
+}
+
+.type-text-container{
+    min-width: 6vw;
+}
+.type-text {
+    padding: 3px;
+    color: white;
+    border-radius: 3px;
+    white-space: pre-wrap;
+    width: 100%;
+    text-align: center;
 }

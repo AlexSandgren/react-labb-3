@@ -35,12 +35,14 @@ function PokemonAbilities({ abilityData }: AbilityProps) {
         <>
             <h5>Abilities</h5>
             <table className="table table-striped">
-                <thead>{/* ... Table headers */}</thead>
+                <thead>
+                    <tr><td>First</td><td>Second</td><td>Hidden</td></tr>
+                </thead>
                 <tbody>
                     <tr>
-                        <td>{ability1Name || 'None'}</td>
-                        <td>{ability2Name || 'None'}</td>
-                        <td>{hiddenAbilityName || 'None'}</td>
+                        <td className='ability-row'>{ability1Name || 'None'}</td>
+                        <td className='ability-row'>{ability2Name || 'None'}</td>
+                        <td className='ability-row'>{hiddenAbilityName || 'None'}</td>
                     </tr>
                 </tbody>
             </table>
