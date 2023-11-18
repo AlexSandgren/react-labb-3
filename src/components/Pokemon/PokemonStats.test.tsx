@@ -47,5 +47,4 @@ describe('PokemonStats component', () => {
         expect(spd).toBeInTheDocument()
         expect(spe).toBeInTheDocument()
     })
-    // Add more test cases to cover different scenarios and edge cases of your component
 })

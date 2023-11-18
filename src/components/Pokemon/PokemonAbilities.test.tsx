@@ -5,15 +5,15 @@ import PokemonAbilities from './PokemonAbilities'
 describe('PokemonAbilities component', () => {
     let abilityData = [
         {
-            ability: { name: 'ability1' },
+            ability: { name: 'inner-focus' },
             is_hidden: false
         },
         {
-            ability: { name: 'ability2' },
+            ability: { name: 'truant' },
             is_hidden: false
         },
         {
-            ability: { name: 'hiddenAbility' },
+            ability: { name: 'iron-fist' },
             is_hidden: true
         }
     ]
@@ -23,14 +23,12 @@ describe('PokemonAbilities component', () => {
             <PokemonAbilities abilityData={abilityData} />
         )
 
-        const ability1 = getByText('Ability1') // Replace 'Ability1' with the formatted expected name
-        const ability2 = getByText('Ability2') // Replace 'Ability2' with the formatted expected name
-        const hiddenAbility = getByText('HiddenAbility') // Replace 'HiddenAbility' with the formatted expected name
+        const ability1 = getByText('Inner focus')
+        const ability2 = getByText('Truant')
+        const hiddenAbility = getByText('Iron fist')
 
         expect(ability1).toBeInTheDocument()
         expect(ability2).toBeInTheDocument()
         expect(hiddenAbility).toBeInTheDocument()
     })
-
-    // Add more test cases to cover different scenarios and edge cases of your component
 })

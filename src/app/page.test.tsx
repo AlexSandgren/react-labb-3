@@ -9,5 +9,4 @@ describe('Home component', () => {
         const app = getByTestId('app')
         expect(app).toBeInTheDocument()
     })
-    // Add more test cases to cover different scenarios and edge cases of your component
 })
