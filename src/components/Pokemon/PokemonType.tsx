@@ -13,16 +13,23 @@ function PokemonType({ typeData }: ITypeData) {
 
     const getTypeColor = (typeName: string) => {
         const colorMappings: TypeMappings = {
-            fire: '#FF4500',
-            water: '#0000FF',
-            grass: '#006400',
-            bug: '#7FFF00',
-            ground: '#F5DEB3',
-            rock: '#A0522D',
-            steel: '#708090',
-            poison: '#663399',
-            flying: '#87CEEB',
-            ice: '#E0FFFF'
+            fire: '#F08030',
+            water: '#6890F0',
+            grass: '#78C850',
+            bug: '#B8A038',
+            ground: '#A890F0',
+            rock: '#B8A038',
+            steel: '#B8B8D0',
+            poison: '#A040A0',
+            flying: '#A890F0',
+            ice: '#98D8D8',
+            dragon: '#9260EF',
+            electric: '#FAD361',
+            dark: '#705848',
+            psychic: '#F85888',
+            fairy: '#EE99AC',
+            ghost: '#705898',
+            fighting: '#C03028'
         }
 
         return colorMappings[typeName] || false
@@ -31,26 +38,27 @@ function PokemonType({ typeData }: ITypeData) {
     return (
         <div className="poke-types-container">
             {typeData ? (
-                typeData.map((type: any, index: number) => (
+                typeData.map((type: any, index: number) => {
+                    const typecolor = getTypeColor(type.type.name)
                     //add white-space: pre-wrap to make sure the leading space does not get removed
-                    <h6
-                        key={index}
+                    return(
+                    <div key={index} className="type-text-container">
+
+
+
+                    <h6 className="type-text"
+
                         style={{
-                            whiteSpace: 'pre-wrap',
-                            color: getTypeColor(type.type.name) || 'black'
-                        }}
+                            backgroundColor:typecolor||'white'}}
                     >
-                        {index === 1 ? (
-                            <span style={{ color: 'black' }}>{' & '}</span>
-                        ) : (
-                            ''
-                        )}
+
                         {type?.type.name
                             .charAt(0)
                             .toUpperCase()
                             .concat(type.type.name.slice(1))}
                     </h6>
-                ))
+                </div>
+                )})
             ) : (
                 <h6>No abilites available</h6>
             )}

@@ -1,4 +1,3 @@
-'use client'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Image from 'next/image'
@@ -14,11 +13,9 @@ interface IPokemonProps {
 
 function Pokemon({ pokemon }: { pokemon: IPokemonProps }) {
     const [pokeInfo, setPokeInfo] = useState(null)
-    console.log(pokeInfo)
 
     useEffect(() => {
         if (!pokemon.value) return
-        console.log(pokemon)
         axios.get(pokemon.value).then((response) => {
             setPokeInfo(response.data)
         })

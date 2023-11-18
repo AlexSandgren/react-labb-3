@@ -20,7 +20,6 @@ function PokeSearcher({ pokeNumber }: PokeSearcherProps) {
 
     const handleChange = (poke: IPokemon | null) => {
         if (poke == null) return
-        console.log(`setting poke${pokeNumber} to ` + poke.label)
         if (pokeNumber == 1) {
             setPoke1(poke)
         } else if (pokeNumber == 2) {
@@ -31,24 +30,15 @@ function PokeSearcher({ pokeNumber }: PokeSearcherProps) {
     }
 
     const getPokemon = useEffect(() => {
-        axios
-            .get(`${baseUrl}pokemon?limit=1500&offset=0`)
-            .then((r) => {
-                console.log(r)
-                setPokeList(
-                    r.data.results.map(
-                        (entry: { name: string; url: string }) => ({
-                            value: entry.url,
-                            label:
-                                entry.name.charAt(0).toUpperCase() +
-                                entry.name.slice(1)
-                        })
-                    )
-                )
-            })
-            .then(() => {
-                console.log(pokeList)
-            })
+        axios.get(`${baseUrl}pokemon?limit=1500&offset=0`).then((r) => {
+            setPokeList(
+                r.data.results.map((entry: { name: string; url: string }) => ({
+                    value: entry.url,
+                    label:
+                        entry.name.charAt(0).toUpperCase() + entry.name.slice(1)
+                }))
+            )
+        })
     }, [])
 
     return (
