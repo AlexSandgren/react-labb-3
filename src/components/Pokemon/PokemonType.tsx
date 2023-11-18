@@ -16,8 +16,8 @@ function PokemonType({ typeData }: ITypeData) {
             fire: '#F08030',
             water: '#6890F0',
             grass: '#78C850',
-            bug: '#B8A038',
-            ground: '#A890F0',
+            bug: '#A8B820',
+            ground: '#E0C068',
             rock: '#B8A038',
             steel: '#B8B8D0',
             poison: '#A040A0',
@@ -41,24 +41,22 @@ function PokemonType({ typeData }: ITypeData) {
                 typeData.map((type: any, index: number) => {
                     const typecolor = getTypeColor(type.type.name)
                     //add white-space: pre-wrap to make sure the leading space does not get removed
-                    return(
-                    <div key={index} className="type-text-container">
-
-
-
-                    <h6 className="type-text"
-
-                        style={{
-                            backgroundColor:typecolor||'white'}}
-                    >
-
-                        {type?.type.name
-                            .charAt(0)
-                            .toUpperCase()
-                            .concat(type.type.name.slice(1))}
-                    </h6>
-                </div>
-                )})
+                    return (
+                        <div key={index} className="type-text-container">
+                            <h6
+                                className="type-text"
+                                style={{
+                                    backgroundColor: typecolor || 'white'
+                                }}
+                            >
+                                {type?.type.name
+                                    .charAt(0)
+                                    .toUpperCase()
+                                    .concat(type.type.name.slice(1))}
+                            </h6>
+                        </div>
+                    )
+                })
             ) : (
                 <h6>No abilites available</h6>
             )}
