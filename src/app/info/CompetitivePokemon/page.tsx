@@ -12,7 +12,7 @@ const Page = () => {
     const conv = new Converter()
 
     const content = fs.readFileSync(
-        path.join('static', 'competitive_pokemon.md'),
+        path.join('static', 'Competitive_pokemon.md'),
         'utf-8'
     )
 
