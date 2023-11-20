@@ -5,7 +5,7 @@ import matter from 'gray-matter'
 import '../page-styling.css'
 
 export const metadata = {
-    title: 'Competitive Pokémon',
+    title: 'Pokémon strategy',
     description: 'a nice description'
 }
 
