@@ -40,7 +40,6 @@ function PokemonType({ typeData }: ITypeData) {
             {typeData ? (
                 typeData.map((type: any, index: number) => {
                     const typecolor = getTypeColor(type.type.name)
-                    //add white-space: pre-wrap to make sure the leading space does not get removed
                     return (
                         <div key={index} className="type-text-container">
                             <h6

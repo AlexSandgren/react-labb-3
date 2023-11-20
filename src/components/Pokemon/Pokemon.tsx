@@ -19,10 +19,21 @@ type PokeInfo = {
     }
 }
 
+interface ISpeciesData {
+    pokeSpeciesInfo: {
+        evolution_chain: {
+            url: string
+        }
+        name: string
+    }
+}
+
 function Pokemon({ pokemon }: { pokemon: IPokemonProps }) {
     const [pokeInfo, setPokeInfo] = useState<PokeInfo | undefined>(undefined)
 
-    const [pokeSpeciesInfo, setPokeSpeciesInfo] = useState(null)
+    const [pokeSpeciesInfo, setPokeSpeciesInfo] = useState<
+        ISpeciesData | undefined
+    >(undefined)
     console.log(pokeInfo)
     console.log(pokeSpeciesInfo)
     useEffect(() => {
@@ -66,7 +77,7 @@ function Pokemon({ pokemon }: { pokemon: IPokemonProps }) {
                 <PokemonType typeData={(pokeInfo as any)?.types} />
                 <PokemonStats statData={(pokeInfo as any)?.stats} />
                 <PokemonAbilities abilityData={(pokeInfo as any)?.abilities} />
-                <PokemonEvolutions pokeSpeciesInfo={pokeSpeciesInfo} />
+                <PokemonEvolutions pokeSpeciesInfo={pokeSpeciesInfo as any} />
             </div>
         </>
     )

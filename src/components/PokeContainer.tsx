@@ -2,17 +2,22 @@
 import PokeSearcher from './PokeSearcher'
 import { usePokeContext } from './PokeProvider'
 import Pokemon from './Pokemon/Pokemon'
+import Link from 'next/link'
 
-interface IPokemonProps{
-    value:string
-    name:string
+interface IPokemonProps {
+    value: string
+    name: string
 }
 
 function PokeContainer() {
-    const { poke1, poke2 }: { poke1: IPokemonProps; poke2: IPokemonProps } = usePokeContext();
+    const { poke1, poke2 }: { poke1: IPokemonProps; poke2: IPokemonProps } =
+        usePokeContext()
 
     return (
         <div className="poke-container">
+            <Link href="/info/Roles">Pokemon roles</Link>
+            <Link href="/info/Strategy">Pokemon Strategy</Link>
+            <Link href="/info/CompetitivePokemon">Competitive Pokémon</Link>
             <h3>Pokémon searcher</h3>
             <div className="poke-boxes">
                 <div className="poke-info">

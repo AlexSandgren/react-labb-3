@@ -13,7 +13,8 @@ function PokemonImage({ spriteInfo }: any) {
                         .animated.front_default
                         ? spriteInfo.versions['generation-v']['black-white']
                               .animated.front_default
-                        : spriteInfo?.front_default) ||
+                        : spriteInfo?.other['official-artwork']
+                              .front_default) ||
                     'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Pokeball.png/640px-Pokeball.png'
                 }
             />

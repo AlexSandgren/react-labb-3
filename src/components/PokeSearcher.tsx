@@ -35,7 +35,7 @@ function PokeSearcher({ pokeNumber }: PokeSearcherProps) {
                 r.data.results.map((entry: { name: string; url: string }) => ({
                     value: entry.url,
                     label:
-                        entry.name.charAt(0).toUpperCase() + entry.name.slice(1)
+                        (entry.name.charAt(0).toUpperCase() + entry.name.slice(1)).replaceAll('-',' ')
                 }))
             )
         })
@@ -43,7 +43,7 @@ function PokeSearcher({ pokeNumber }: PokeSearcherProps) {
 
     return (
         <>
-            {/*Really slow due to the large amount of data in options. Tried to make pagination work but couldn't
+            {/*Really slow when input-filtering due to the large amount of data in options. Tried to make pagination work but couldn't
                API does not take filter parameters either so can't go that route.*/}
             <Select
                 options={pokeList}

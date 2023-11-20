@@ -59,7 +59,3 @@ Be mindful of when to switch Pokemon. If an opponent sends out a Pokemon with a 
 ## 7. Item Usage
 
 Use items wisely during battle. Potions and status-healing items can keep your Pokemon in the fight longer, while stat-boosting items can turn the tide in your favor.
-
-## Conclusion
-
-By understanding types, building a balanced team, diversifying move sets, predicting opponent moves, and making strategic decisions, you can improve your Pokemon battle prowess. Adapt your strategy based on the situation, and always be prepared for the unexpected!

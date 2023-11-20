@@ -1,9 +1,34 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-interface IEvoData {}
+interface IEvoChain {
+    chain: {
+        species: {
+            name: string
+        }
+        evolves_to: {
+            species: {
+                name: string
+            }
+            evolves_to: {
+                species: {
+                    name: string
+                }
+            }[]
+        }[]
+    }
+}
 
-function PokemonEvolutions({ pokeSpeciesInfo }) {
-    const [evoChain, setEvoChain] = useState(null)
+interface ISpeciesData {
+    pokeSpeciesInfo: {
+        evolution_chain: {
+            url: string
+        }
+        name: string
+    }
+}
+
+function PokemonEvolutions({ pokeSpeciesInfo }: ISpeciesData) {
+    const [evoChain, setEvoChain] = useState<IEvoChain | undefined>(undefined)
     console.log(evoChain)
     console.log(pokeSpeciesInfo)
     useEffect(() => {
@@ -21,7 +46,7 @@ function PokemonEvolutions({ pokeSpeciesInfo }) {
         )
     }
 
-    const firstEvo = formatPokemonName(evoChain?.chain.species.name) || ''
+    const firstEvo = formatPokemonName(evoChain?.chain.species.name ?? '')
     const secondEvos =
         evoChain?.chain.evolves_to
             .map((evo) => formatPokemonName(evo.species.name))

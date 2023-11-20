@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/info/CompetitivePokemon/page.tsx", "src/app/info/CompetitivePokemon/page.test.tsx", "src/app/info/Roles/page.tsx", "src/app/info/Strategy/page.tsx"],
   "exclude": ["node_modules"]
 }
