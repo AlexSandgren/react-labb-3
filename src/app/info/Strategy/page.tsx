@@ -1,7 +1,6 @@
 import { Converter } from 'showdown'
 import fs from 'fs'
 import path from 'path'
-import matter from 'gray-matter'
 import '../page-styling.css'
 
 export const metadata = {
@@ -14,8 +13,8 @@ const Page = () => {
 
     const content = fs.readFileSync(path.join('static', 'Strategy.md'), 'utf-8')
 
-    const mattered = conv.makeHtml(content)
+    const converted = conv.makeHtml(content)
 
-    return <div dangerouslySetInnerHTML={{ __html: mattered }}></div>
+    return <div dangerouslySetInnerHTML={{ __html: converted }}></div>
 }
 export default Page
