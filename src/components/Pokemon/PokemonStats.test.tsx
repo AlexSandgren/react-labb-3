@@ -46,5 +46,13 @@ describe('PokemonStats component', () => {
         expect(spa).toBeInTheDocument()
         expect(spd).toBeInTheDocument()
         expect(spe).toBeInTheDocument()
-    })
+    }),
+
+    it('calculates total stats correctly',
+        () => {
+            const { getByText } = render(<PokemonStats statData={statData} />)
+
+            const total = getByText('600')
+            expect(total).toBeInTheDocument()
+        })
 })
